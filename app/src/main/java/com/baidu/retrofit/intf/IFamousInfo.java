@@ -7,9 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Query;
 
-/**
- * Created by lizhixian on 16/5/8.
- */
 public interface IFamousInfo {
 
     @GET("/avatardata/mingrenmingyan/lookup")

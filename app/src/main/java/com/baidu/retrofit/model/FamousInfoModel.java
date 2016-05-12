@@ -2,6 +2,7 @@ package com.baidu.retrofit.model;
 
 import android.content.Context;
 
+import com.baidu.retrofit.Constant;
 import com.baidu.retrofit.RetrofitWrapper;
 import com.baidu.retrofit.bean.FamousInfo;
 import com.baidu.retrofit.bean.FamousInfoReq;
@@ -9,15 +10,12 @@ import com.baidu.retrofit.intf.IFamousInfo;
 
 import retrofit2.Call;
 
-/**
- * Created by lizhixian on 16/5/8.
- */
 public class FamousInfoModel {
     private static FamousInfoModel famousInfoModel;
     private IFamousInfo mIFamousInfo;
 
     public FamousInfoModel(Context context) {
-        mIFamousInfo = RetrofitWrapper.getInstance().create(IFamousInfo.class);
+        mIFamousInfo = RetrofitWrapper.getInstance(Constant.BASEURL).create(IFamousInfo.class);
     }
 
     public static FamousInfoModel getInstance(Context context){
