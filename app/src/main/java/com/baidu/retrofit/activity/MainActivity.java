@@ -65,13 +65,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onResponse(Call<FamousInfo> call, Response<FamousInfo> response) {
 
-                    if(response.isSuccess()) {
-                        FamousInfo result = response.body();
-                        if(null != result) {
-                            List<FamousInfo.ResultEntity> entity = result.getResult();
-                            mTxtContent.setText("1、"+entity.get(0).getFamous_saying()+"\n---"+entity.get(0).getFamous_name()+"\n 2、"
-                                    +entity.get(1).getFamous_saying()+"\n---"+entity.get(1).getFamous_name());
-                        }
+                    FamousInfo result = response.body();
+                    if(null != result) {
+                        List<FamousInfo.ResultEntity> entity = result.getResult();
+                        mTxtContent.setText("1、"+entity.get(0).getFamous_saying()+"\n---"+entity.get(0).getFamous_name()+"\n 2、"
+                                +entity.get(1).getFamous_saying()+"\n---"+entity.get(1).getFamous_name());
                     }
 
                 }
@@ -81,6 +79,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 }
             });
+
+
+
         }
     }
 
